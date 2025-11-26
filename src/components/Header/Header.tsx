@@ -20,7 +20,7 @@ export const Header = () => {
           <ul className="header__list">
             <li className="header__item">
               <Link to="/" className="header__link">
-                На главную
+                Домой
               </Link>
             </li>
             <li className="header__item">

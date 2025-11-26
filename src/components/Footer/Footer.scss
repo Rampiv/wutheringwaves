@@ -61,18 +61,26 @@
 }
 
 @media (max-width: 480px) {
-  .navigation{
-    &__link{
-      img{
+  .navigation {
+    &__h2 {
+      @include textType1();
+      margin-bottom: 10px;
+    }
+    &__link {
+      img {
         width: 15px;
       }
-      svg{
+      svg {
         width: 15px;
       }
     }
-    &__text{
-      @include textType1();
+    &__list {
+      &:nth-child(2) {
+        gap: 0;
+      }
+    }
+    &__text {
+      @include textType05();
     }
   }
-  
 }

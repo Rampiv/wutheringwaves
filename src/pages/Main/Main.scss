@@ -224,15 +224,31 @@
     min-width: fit-content;
 
     a {
-      @include textType1();
+      @include textType15();
       padding: 0;
     }
   }
 }
 
-@media (max-width: 370px) {
-  .chibi__cloud-text {
-    font-size: 8px;
-    line-height: 8px;
+@media (max-width: 350px) {
+  .chibi {
+    &__cloud-text {
+      font-size: 8px;
+      line-height: 8px;
+    }
+    &__hint {
+      left: -62px;
+      svg {
+        width: 35px;
+      }
+    }
+  }
+  .chibi__hint-text {
+    @include textType15();
+    filter: invert(1)
+  }
+  .links__item {
+    @include textType1();
+    padding: 10px;
   }
 }

@@ -59,8 +59,30 @@
 }
 
 @media (max-width: 415px) {
-  .header__link {
-    @include textType1();
-    min-width: 120px;
+  .header {
+    &__link {
+      @include textType15();
+      min-width: fit-content;
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+    &__link{
+      width: 100%;
+    }
   }
+}
+
+@media (max-width: 350px) {
+   .header {
+    &__link {
+      @include textType1();
+      padding: 10px;
+    }
+&__nav{
+  padding: 5px 0;
+}
+  }
+  
 }

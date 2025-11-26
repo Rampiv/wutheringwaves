@@ -2,7 +2,8 @@ import { useParams } from "react-router"
 import { DataResonators } from "../../data"
 import "./Resonator.scss"
 import { Accordion, YouTubePlayer } from "../../components"
-import marker from '@assets/icons/marker.webp'
+import marker from "@assets/icons/marker.webp"
+import { useEffect, useState } from "react"
 
 const contentsList = [
   { title: "РОЛИК ПО БАЗЕ", href: "YTGuide" },
@@ -19,6 +20,19 @@ const contentsList = [
 
 export const Resonator = () => {
   const { id } = useParams<{ id: string }>()
+
+  // Состояние для отображения кнопки "Наверх"
+  const [showUpButton, setShowUpButton] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Показываем кнопку, если прокрутили больше 100vh
+      setShowUpButton(window.scrollY > window.innerHeight)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const resonator = DataResonators.find(
     res => res.engName.toLocaleLowerCase() === id?.toLocaleLowerCase(),
@@ -309,9 +323,11 @@ export const Resonator = () => {
             </ul>
           </div>
         </div>
-        <a className="resonator__up" href="#up">
-          Наверх
-        </a>
+        {showUpButton && (
+          <a className="resonator__up" href="#up">
+            Наверх
+          </a>
+        )}
       </div>
     </section>
   )
