@@ -91,7 +91,7 @@
     justify-content: flex-start;
     font-weight: 400;
     gap: 10px;
-    a{
+    a {
       text-align: start;
     }
   }
@@ -382,35 +382,55 @@
   }
 
   .review {
-    p {
+    &__descr {
       @include textType15();
     }
+  }
+  .resonator__up{
+    @include textType15();
   }
 }
 
 @media (max-width: 480px) {
+  .resonator {
+    &__h2 {
+      @include textType2();
+      margin-bottom: 20px;
+    }
+    &__up{
+    @include textType1();
+    padding: 5px
+  }
+  }
   .name {
     &__h2 {
-      @include textType3();
+      @include textType2();
     }
   }
   .contents {
     &__h2 {
-      @include textType15();
+      @include textType1();
+      margin-bottom: 10px;
+    }
+    &__list {
+      column-gap: 5px;
     }
     &__item {
-      @include textType1();
+      @include textType05();
       a {
         text-align: start;
+      }
+      img {
+        width: 10px;
       }
     }
   }
   .plusminus {
     &__descr {
-      @include textType15();
+      @include textType1();
     }
     &__list {
-      @include textType1();
+      @include textType05();
       gap: 5px;
     }
     &__plus-list {
@@ -420,22 +440,25 @@
     &__minus-list {
       color: $color7;
     }
+    &__h3 {
+      @include textType1();
+    }
   }
   .weapon {
     &__descr-container {
       p {
-        @include textType1();
+        @include textType05();
       }
     }
   }
   .constellation {
     &__descr {
       p {
-        @include textType1();
+        @include textType05();
       }
     }
     &__h3 {
-      @include textType15();
+      @include textType1();
     }
   }
   .team__accordion-item {
@@ -444,6 +467,11 @@
     }
     p {
       @include textType03();
+    }
+  }
+  .review {
+    &__descr {
+      @include textType1();
     }
   }
 }

@@ -23,3 +23,9 @@
         height: 300px;
     }
 }
+
+@media (max-width: 480px){
+  .youtube-player-wrapper{
+    height: 170px;
+  }
+}
